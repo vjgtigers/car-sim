@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launchConfig>
+  <config id="map">
+    <command>sumo-gui -c "map.sumocfg" --start</command>
+    <workingDir>H:/omnet/veins/veins-5.3.1/veins-veins-5.3.1/examples/car-sim</workingDir>
+    <log value="veins-sumo.log"/>
+    <verbose value="true"/>
+  </config>
+</launchConfig>

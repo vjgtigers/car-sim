@@ -1,0 +1,54 @@
+version 3
+run Default-0-20251129-22:28:50-7044
+attr configname Default
+attr datetime 20251129-22:28:50
+attr datetimef 20251129-222850
+attr experiment Default
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network RSUExampleScenario
+attr processid 7044
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../images
+config description "Run using launchd + sumo-gui"
+config RSUExampleScenario.playgroundSizeX 2000m
+config RSUExampleScenario.playgroundSizeY 2000m
+config RSUExampleScenario.playgroundSizeZ 2000m
+config network RSUExampleScenario
+config sim-time-limit 3600s
+config cmdenv-express-mode false
+config *.manager.moduleType "\"org.car2x.veins.nodes.Car\""
+config *.manager.moduleName "\"node\""
+config *.manager.launchConfig "xmldoc(\"H:/omnet/veins/veins-5.3.1/veins-veins-5.3.1/examples/car-sim/map.launchd.xml\")"
+config *.manager.configFile "\"map.sumocfg\""
+config *.manager.host "\"localhost\""
+config *.manager.port 9999
+config *.manager.autoShutdown true
+config *.manager.updateInterval 0.1s
+config *.node[*].applType "\"veins::TraCIDemo11p\""
+config *.node[*].appl.debug false
+config *.node[*].appl.headerLength "256 bit"
+config *.node[*].appl.sendBeacons false
+config *.node[*].appl.beaconInterval 1s
+config RSUExampleScenario.rsu[*].applType "\"TraCIDemo11p\""
+config RSUExampleScenario.rsu[*].nicType "\"Nic80211p\""
+config RSUExampleScenario.rsu[0].applType "\"TraCIDemo11p\""
+config RSUExampleScenario.rsu[0].nicType "\"Nic80211p\""
+config *.node[*].nicType "\"veins::Nic80211p\""
+config *.node[*].moduleDisplayString "\"p=0,0;i=block/circle\""
+config output-scalar-file results.sac
+config output-vector-file results.vec
+config **.debug false
+config *.manager.debug true
+config *.node[*].displayMobility true
+
+vector 0 RSUExampleScenario.rsu[0].nic.phy80211p RadioState ETV
+vector 1 RSUExampleScenario.rsu[0].nic.phy80211p RadioChannel ETV
+
